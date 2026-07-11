@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lilita+One&family=Passion+One:wght@400;700;900&display=swap');
+
+/* =======================
+   MAIN & BASE
+   ======================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lilita One', 'Passion One', sans-serif;
+    background-color: #383838;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; 
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0; 
+    box-shadow: none;
+    position: relative;
+}
+
+/* =======================
+   MÚSICA DE FUNDO
+   ======================= */
+.music {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background-color: #fff;
+    opacity: 0.9;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    z-index: 10;
+}
+.music p {
+    margin: 0;
+}
+#music-title {
+    color: #dd60ad;
+}
+
+/* =======================
+   SECTIONS
+   ======================= */
+section {
+    flex: 1;
+    height: 100%;
+}
+
+.image {
+    position: relative;
+    height: 100%;
+    width: 50vw; 
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* EFEITO DE NUVENS (Desktop - Lateral Direita) */
+.cloud-mask::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    width: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 5 40 70'%3E%3Cpath d='M40 0v80H25c-8.3 0-15-6.7-15-15 0-4.3 1.8-8.2 4.8-11-5.7-2.8-9.8-8.6-9.8-15.3 0-6.7 4.1-12.5 9.8-15.3-3-2.8-4.8-6.7-4.8-11 0-8.3 6.7-15 15-15z' fill='%23ffffff'/%3E%3C/svg%3E");
+    background-size: 40px 80px;
+    background-repeat: repeat-y;
+    z-index: 2;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.text p {
+    font-size: 2.5rem;
+    color: #ff7eb3;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* =======================
+   DATA
+   ======================= */
+.event-date {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    width: fit-content;
+    margin-bottom: 5rem;
+    margin-top: 3.4rem;
+}
+
+.day {
+    font-size: 6.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #ff7eb3;
+}
+
+.separator {
+    width: 3px;
+    align-self: stretch;
+    background: repeating-linear-gradient(
+        to bottom,
+        #ff7eb3 0 5px,
+        transparent 5px 10px
+    );
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #ff7eb3;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* =======================
+   BOTÕES INTERATIVOS
+   ======================= */
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:2rem;
+}
+
+.buttons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #dd60ad;
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 100px;
+}
+
+.buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    background-color: #fff;
+    border: #dd60ad solid 3px;
+    border-radius: 50%;
+    color: #dd60ad;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+/* Efeito sutil ao passar o mouse */
+.buttons a:hover button {
+    transform: scale(1.08);
+    background-color: #fff0f6;
+}
+
+/* =======================
+   RESPONSIVIDADE (Celular Vertical)
+   ======================= */
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+        width: 100%;
+    }
+
+    section {
+        flex: none;
+    }
+
+    .image {
+        width: 100%;
+        height: 55vh; /* Altura ideal calculada para telas de celulares comuns */
+    }
+
+    /* Move a nuvem para a base horizontal da imagem */
+    .cloud-mask::after {
+        right: 0;
+        bottom: -1px; /* Cola perfeitamente na div de texto de baixo */
+        top: auto;
+        width: 100%;
+        height: 37px; /* Altura ideal para a base da imagem */
+        /* Versão idêntica adaptada para repetir horizontalmente na base da foto */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 40'%3E%3Cpath d='M0 40h80V25c0-8.3-6.7-15-15-15-4.3 0-8.2 1.8-11 4.8C51.2 9.1 45.4 5 38.7 5c-6.7 0-12.5 4.1-15.3 9.8-2.8-3-6.7-4.8-11-4.8-8.3 0-15 6.7-15 15z' fill='%23ffffff'/%3E%3C/svg%3E");
+        background-size: 80px 40px; /* Mantém o padrão proporcional */
+        background-repeat: repeat-x; /* Repete horizontalmente de ponta a ponta */
+    }
+
+    .text {
+        width: 100%;
+        height: 52vh;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .text p {
+        font-size: 1.6rem;
+    }
+
+    .event-date {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .day {
+        font-size: 3.8rem;
+    }
+
+    .info {
+        font-size: 1.4rem;
+    }
+    
+    .buttons {
+        gap: 2.5rem;
+    }
+}
+
+/* =======================
+   RESPONSIVIDADE (Celular Horizontal)
+   ======================= */
+@media (max-width: 1000px) and (min-width: 601px) {
+    .event-date {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .text p {
+        font-size: 1.25rem;
+    }
+
+    .day {
+        font-size: 2.75rem;
+    }
+
+    .info {
+        font-size: 1.25rem;
+    }
+}
+
+/* ==========================================================================
+   ANIMAÇÕES LÚDICAS DE ENTRADA
+   ========================================================================== */
+
+/* Animação para a imagem deslizar da esquerda */
+@keyframes entradaImagem {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animação para os elementos de texto e botões subirem fofinhos */
+@keyframes entradaTexto {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Aplica a animação na seção da Imagem */
+.image {
+    animation: entradaImagem 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Aplica a animação nos textos e blocos do convite */
+.text p {
+    opacity: 0; /* Começa invisível e espera o tempo do delay */
+    animation: entradaTexto 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.4s; /* Aparece logo após a imagem */
+}
+
+.event-date {
+    opacity: 0;
+    animation: entradaTexto 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.6s; /* Aparece um pouquinho depois do texto principal */
+}
+
+.buttons {
+    opacity: 0;
+    animation: entradaTexto 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.8s; /* Os botões são os últimos a surgir */
+}
+
+/* Animação que faz o elemento flutuar de leve */
+@keyframes flutuarLustroso {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px); /* Sobe apenas 6 pixels */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Aplica o efeito de flutuação contínua nos botões */
+.buttons a {
+    animation: flutuarLustroso 2s ease-in-out infinite;
+}
+
+/* Faz com que o segundo botão comece o movimento um pouquinho depois, 
+   criando um ritmo dessincronizado mais natural */
+.buttons a:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+/* Dessincroniza o terceiro botão para ficar harmônico */
+.buttons a:nth-child(3) {
+    animation-delay: 1s;
+}
+
