@@ -22,6 +22,7 @@ setInterval(function() {
 }, 150);
 
 // Inicia o movimento do obstáculo
+obstacle.style.right = "-100px"; 
 obstacle.classList.add("obstacle-move");
 
 // 2. LOGICA DO PULO E TROCA DE IMAGENS (Salto e Queda)
@@ -83,7 +84,10 @@ function resetGame() {
     score = 0;
     scoreDisplay.innerText = "Pontos: 0";
     gameOverScreen.style.display = "none";
-    obstacle.style.left = "";
-    player.src = "corrida1.png"; // Reseta para a imagem inicial
+    obstacle.classList.remove("obstacle-move");
+    void obstacle.offsetWidth; 
+    player.style.bottom = "0px";
+    player.classList.remove("jump");
+    player.src = "corrida1.png";
     obstacle.classList.add("obstacle-move");
 }
