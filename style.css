@@ -387,6 +387,18 @@ section {
     }
 }
 
+@keyframes flutuarLustroso2 {
+    0% {
+        transform: translateY(3px);
+    }
+    50% {
+        transform: translateY(-6px); /* Sobe apenas 6 pixels */
+    }
+    100% {
+        transform: translateY(3px);
+    }
+}
+
 /* Aplica o efeito de flutuação contínua nos botões */
 .buttons a {
     animation: flutuarLustroso 2s ease-in-out infinite;
@@ -404,6 +416,7 @@ section {
 }
 
 .buttons a:nth-child(4) {
+    animation: flutuarLustroso2 2s ease-in-out infinite;
     animation-delay: 1.5s;
 }
 
