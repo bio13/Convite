@@ -296,7 +296,7 @@ section {
     }
     
     .buttons {
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
 }
 
@@ -401,5 +401,9 @@ section {
 /* Dessincroniza o terceiro botão para ficar harmônico */
 .buttons a:nth-child(3) {
     animation-delay: 1s;
+}
+
+.buttons a:nth-child(4) {
+    animation-delay: 1.5s;
 }
 
