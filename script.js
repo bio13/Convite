@@ -1,15 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const welcomeScreen = document.getElementById("welcome-screen");
-    const btnOpenInvite = document.getElementById("btn-open-invite");
-    const musica = document.getElementById("background-music");
+function abrirModal() {
+    document.getElementById("modal-acompanhantes").style.display = "flex";
+}
 
-    btnOpenInvite.addEventListener("click", function () {
-        // Toca a música (o navegador permite porque houve um clique real)
-        musica.play().catch(error => {
-            console.log("Erro ao tocar áudio:", error);
-        });
+function fecharModal() {
+    document.getElementById("modal-acompanhantes").style.display = "none";
+}
 
-        // Esconde a tela de boas-vindas com efeito fade-out
-        welcomeScreen.classList.add("hidden");
-    });
-});
+function confirmarPresenca(acompanhantes) {
+    const mensagem =
+        `Olá! Estou confirmando minha presença na festa da Maria Clara! Levarei ${acompanhantes} acompanhante(s) 😁`;
+
+    const url =
+        `https://wa.me/5585988667435?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, "_blank");
+}
