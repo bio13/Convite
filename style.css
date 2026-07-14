@@ -40,6 +40,7 @@ main {
 }
 
 .modal-content {
+    font-family: 'Passion One', 'Lilita One', sans-serif;
     background: white;
     padding: 2rem;
     border-radius: 20px;
