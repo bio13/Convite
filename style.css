@@ -389,13 +389,13 @@ section {
 
 @keyframes flutuarLustroso2 {
     0% {
-        transform: translateY(7px);
+        transform: translateY(12px);
     }
     50% {
-        transform: translateY(-2px); /* Sobe apenas 2 pixels */
+        transform: translateY(2px); /* Sobe apenas 2 pixels */
     }
     100% {
-        transform: translateY(7px);
+        transform: translateY(12px);
     }
 }
 
@@ -420,3 +420,156 @@ section {
     animation-delay: 1.5s;
 }
 
+/* ==========================================================================
+   PÁGINA DE PRESENTES
+   ========================================================================== */
+.background {
+    background: white;
+    width: 85%;
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 0.5rem 0.5rem 1rem 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.background .corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+}
+
+.top-left {
+    top: -12px;
+    left: -12px;
+}
+
+.top-right {
+    top: -12px;
+    right: -12px;
+}
+
+.bottom-left {
+    bottom: -12px;
+    left: -12px;
+}
+
+.bottom-right {
+    bottom: -12px;
+    right: -12px;
+}
+
+/* Laterais */
+.background::before,
+.background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Esquerda */
+.background::before {
+    left: -12px;
+    background:
+        radial-gradient(circle at center,
+            white 12px,
+            transparent 13px)
+        center top / 24px 24px repeat-y;
+}
+
+/* Direita */
+.background::after {
+    right: -12px;
+    background:
+        radial-gradient(circle at center,
+            white 12px,
+            transparent 13px)
+        center top / 24px 24px repeat-y;
+}
+.background-top,
+.background-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    pointer-events: none;
+}
+
+.background-top {
+    top: -12px;
+    background:
+        radial-gradient(circle at center,
+            white 12px,
+            transparent 13px)
+        left center / 24px 24px repeat-x;
+}
+
+.background-bottom {
+    bottom: -12px;
+    background:
+        radial-gradient(circle at center,
+            white 12px,
+            transparent 13px)
+        left center / 24px 24px repeat-x;
+}
+
+.curved-text {
+    font-family: 'Lilita One', 'Passion One', sans-serif;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.gift-sugestions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.sugestion {
+    background-color: #fff0f6;
+    border: 2px solid #dd60ad;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 90%;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sugestion img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 1rem;
+    cursor: default;
+}
+
+.sugestion-text {
+    color: #E64997;
+}
+
+.sugestion-text h2 {
+    font-weight: lighter;
+    text-decoration: underline;
+}
+
+.sugestion-text p {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .sugestion img {
+        width: 60px;
+        height: 60px;
+        margin: 0.5rem;
+    }
+}
