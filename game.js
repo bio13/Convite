@@ -22,7 +22,7 @@ setInterval(function() {
 }, 150);
 
 // Inicia o movimento do obstáculo
-obstacle.style.right = "800px"; 
+obstacle.style.right = "1400px"; 
 obstacle.classList.add("obstacle-move");
 
 // 2. LOGICA DO PULO E TROCA DE IMAGENS (Salto e Queda)
