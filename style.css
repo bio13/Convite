@@ -389,13 +389,13 @@ section {
 
 @keyframes flutuarLustroso2 {
     0% {
-        transform: translateY(5px);
+        transform: translateY(7px);
     }
     50% {
-        transform: translateY(-6px); /* Sobe apenas 6 pixels */
+        transform: translateY(-2px); /* Sobe apenas 2 pixels */
     }
     100% {
-        transform: translateY(5px);
+        transform: translateY(7px);
     }
 }
 
