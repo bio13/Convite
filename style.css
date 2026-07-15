@@ -30,7 +30,7 @@ main {
 }
 
 .modal {
-    display: flex;
+    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.5);
@@ -41,7 +41,7 @@ main {
 
 .modal-content {
     background: white;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 20px;
     text-align: center;
     width: 90%;
@@ -57,8 +57,8 @@ main {
 
 .modal-content button {
     font-family: 'Passion One', 'Lilita One', sans-serif;
-    margin: 0.5rem;
-    padding: 1rem;
+    margin: 0.7rem;
+    padding: 1.5rem;
     border: 2px solid #E64997;
     background: white;
     color: #E64997;
