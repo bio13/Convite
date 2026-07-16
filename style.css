@@ -29,48 +29,6 @@ main {
     position: relative;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.5);
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 20px;
-    text-align: center;
-    width: 90%;
-    max-width: 320px;
-}
-
-.modal-content h3 {
-    color: #E64997;
-    margin-bottom: 1rem;
-}
-
-.modal-content button {
-    font-family: 'Passion One', 'Lilita One', sans-serif;
-    margin: .4rem;
-    padding: .8rem 1.2rem;
-    border: 2px solid #E64997;
-    background: white;
-    color: #E64997;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.fechar {
-    display: block;
-    width: 100%;
-    margin-top: 1rem;
-}
-
 /* =======================
    MÚSICA DE FUNDO
    ======================= */
