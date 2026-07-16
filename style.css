@@ -54,6 +54,7 @@ main {
 }
 
 .modal-content button {
+    font-family: 'Passion One', 'Lilita One', sans-serif;
     margin: .4rem;
     padding: .8rem 1.2rem;
     border: 2px solid #E64997;
